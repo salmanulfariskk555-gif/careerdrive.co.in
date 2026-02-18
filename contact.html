@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Career Drive Edu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; }
+        .input-field {
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            border-color: #f97316;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
+        }
+        .contact-card { transition: all 0.3s ease; }
+        .contact-card:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body>
+
+    <nav class="border-b border-gray-100 py-6 px-6 sticky top-0 bg-white/90 backdrop-blur-md z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-2xl font-black tracking-tighter text-black">CAREER DRIVE<span class="text-orange-500">.</span></span>
+            </a>
+            <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-black transition">BACK TO HOME</a>
+        </div>
+    </nav>
+
+    <header class="py-20 bg-[#fafafa] border-b border-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-black text-black mb-6 tracking-tight">Let's <span class="text-orange-500 italic">Connect.</span></h1>
+            <p class="text-gray-500 text-lg max-w-xl mx-auto font-medium">Have questions about admissions or scholarships? Our experts are here to help you guide your career path.</p>
+        </div>
+    </header>
+
+    <section class="py-24 container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-20">
+
+            <div class="space-y-12">
+                <div>
+                    <h2 class="text-3xl font-extrabold mb-8">Reach out to us</h2>
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-6 contact-card">
+                            <div class="bg-orange-100 p-4 rounded-2xl text-orange-600">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Our Office</h4>
+                                <p class="text-gray-500 leading-relaxed">Career Drive Edu Consultancy,<br>Kondotty, Malappuram, Kerala - 673638</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-6 contact-card">
+                            <div class="bg-blue-100 p-4 rounded-2xl text-blue-600">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Call Support</h4>
+                                <p class="text-gray-500">+91 94952 09080</p>
+                                <p class="text-gray-500">+91 98765 43210</p>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/919495209080" class="flex items-start space-x-6 contact-card group">
+                            <div class="bg-green-100 p-4 rounded-2xl text-green-600 group-hover:bg-green-600 group-hover:text-white transition">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-green-600">Chat on WhatsApp</h4>
+                                <p class="text-gray-500">Instant response for your queries.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="rounded-[40px] overflow-hidden border border-gray-100 shadow-sm h-72">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62635.84518428887!2d75.92205567784654!3d11.132644400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba645851a70014b%3A0xc6380c7d363d67f8!2sKondotty%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="bg-[#fafafa] p-10 md:p-16 rounded-[50px] border border-gray-100">
+                <h3 class="text-2xl font-black mb-8">Send an Enquiry</h3>
+                <form action="#" class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-black uppercase tracking-widest text-gray-400 mb-2">Full Name</label>
+                        <input type="text" placeholder="John Doe" class="w-full px-6 py-4 rounded-2xl input-field bg-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-black uppercase tracking-widest text-gray-400 mb-2">Phone Number</label>
+                        <input type="tel" placeholder="+91 00000 00000" class="w-full px-6 py-4 rounded-2xl input-field bg-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-black uppercase tracking-widest text-gray-400 mb-2">Preferred Course</label>
+                        <select class="w-full px-6 py-4 rounded-2xl input-field bg-white appearance-none">
+                            <option>Engineering (B.Tech)</option>
+                            <option>Medicine (MBBS)</option>
+                            <option>Management (MBA/BBA)</option>
+                            <option>Nursing / Allied Health</option>
+                            <option>Other Courses</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-black uppercase tracking-widest text-gray-400 mb-2">Message</label>
+                        <textarea rows="4" placeholder="How can we help you?" class="w-full px-6 py-4 rounded-2xl input-field bg-white"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-black text-white py-5 rounded-2xl font-black text-lg hover:bg-orange-500 transition-all shadow-xl shadow-black/10">
+                        SEND MESSAGE
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 border-t border-gray-100">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h4 class="font-black text-xl mb-2 text-black">Follow Our Updates</h4>
+                <p class="text-gray-400 text-sm">Stay connected for latest admission news.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="h-14 w-14 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-orange-500 hover:bg-white hover:shadow-lg transition">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="#" class="h-14 w-14 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-blue-600 hover:bg-white hover:shadow-lg transition">
+                    <i class="fab fa-facebook-f text-xl"></i>
+                </a>
+                <a href="#" class="h-14 w-14 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-blue-400 hover:bg-white hover:shadow-lg transition">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-gray-400 text-[10px] font-bold uppercase tracking-[0.4em]">
+        © 2026 Career Drive Edu Consultancy | Developed for Excellence
+    </footer>
+
+</body>
+</html>
