@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Services | Career Drive Edu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .service-card {
+            transition: all 0.4s ease;
+            border: 1px solid rgba(30, 58, 138, 0.1);
+        }
+        .service-card:hover {
+            transform: translateY(-12px);
+            border-color: #f97316;
+            box-shadow: 0 25px 50px -12px rgba(30, 58, 138, 0.15);
+        }
+        .modal-active {
+            display: flex !important;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <div class="bg-[#1e3a8a] text-white py-2 px-6 hidden md:block border-b border-blue-800/50">
+        <div class="container mx-auto flex justify-between text-xs font-semibold tracking-wide">
+            <div class="flex space-x-6">
+                <span><i class="fas fa-phone-alt mr-2 text-orange-400"></i> +91 9495 209 080</span>
+                <span><i class="fas fa-envelope mr-2 text-orange-400"></i> careerdrivekondotty@gmail.com</span>
+            </div>
+            <div><span><i class="fas fa-map-marker-alt mr-2 text-orange-400"></i> CHUNGAM, KONDOTTY</span></div>
+        </div>
+    </div>
+
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="h-10 w-10 bg-orange-500 rounded-xl flex items-center justify-center text-white font-bold shadow-lg shadow-orange-500/20">CD</div>
+                <h1 class="text-xl font-extrabold text-[#1e3a8a] tracking-tight">CAREER DRIVE</h1>
+            </div>
+            <div class="hidden lg:flex space-x-8 font-bold text-[#1e3a8a] text-sm uppercase tracking-wider">
+                <a href="index.html" class="hover:text-orange-500">Home</a>
+                <a href="services.html" class="text-orange-500">Services</a>
+                <a href="scholarships.html" class="hover:text-orange-500">Scholarships</a>
+                <a href="placements.html" class="hover:text-orange-500">Placements</a>
+                <a href="contact.html" class="hover:text-orange-500">Contact</a>
+            </div>
+            <a href="index.html#contact" class="bg-orange-500 text-white px-6 py-2 rounded-full font-bold text-sm hover:shadow-lg transition">ENQUIRE</a>
+        </div>
+    </nav>
+
+    <header class="py-24 bg-[#1e3a8a] text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <span class="text-orange-400 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Academic Excellence</span>
+            <h1 class="text-5xl md:text-7xl font-black mb-6">Our <span class="text-orange-500 italic">Specializations.</span></h1>
+            <p class="text-blue-100/80 text-lg max-w-2xl leading-relaxed">Top-rated universities-il admission urappikkaan Career Drive-inte 10 varshathe parichayamsampath ningale sahayikkunnu.</p>
+        </div>
+    </header>
+
+    <section class="py-24 container mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="service-card p-10 rounded-[40px] bg-white">
+                <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-stethoscope"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-[#1e3a8a] mb-4">Medical Science</h3>
+                <p class="text-gray-500 text-sm mb-8">MBBS, BDS, BAMS & Allied Health courses in top medical colleges.</p>
+                <button onclick="openModal('Medical Science', 'Physics, Chemistry & Biology (PCB) with 50% marks in +2. NEET qualification mandatory.', '1. KMC Manipal<br>2. JSS Mysore<br>3. Yenepoya Mangalore')" class="text-orange-600 font-bold text-xs tracking-widest uppercase border-b-2 border-orange-500 pb-1 hover:text-[#1e3a8a] hover:border-[#1e3a8a] transition">Details <i class="fas fa-chevron-right ml-1"></i></button>
+            </div>
+
+            <div class="service-card p-10 rounded-[40px] bg-white">
+                <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-[#1e3a8a] mb-4">Engineering</h3>
+                <p class="text-gray-500 text-sm mb-8">B.Tech in AI, Data Science, CSE, and Robotics with merit support.</p>
+                <button onclick="openModal('Engineering', 'Min 45-50% in +2 (PCM). Entrance scores preferred for top colleges.', '1. RV Bangalore<br>2. SRM University<br>3. VIT Vellore')" class="text-orange-600 font-bold text-xs tracking-widest uppercase border-b-2 border-orange-500 pb-1 hover:text-[#1e3a8a] hover:border-[#1e3a8a] transition">Details <i class="fas fa-chevron-right ml-1"></i></button>
+            </div>
+
+            <div class="service-card p-10 rounded-[40px] bg-white">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-[#1e3a8a] mb-4">Management</h3>
+                <p class="text-gray-500 text-sm mb-8">MBA & BBA programs focusing on Logistics, HR, and Fintech.</p>
+                <button onclick="openModal('Management', 'BBA: Pass in +2. <br>MBA: Graduation with 50% aggregate.', '1. Christ University<br>2. Jain University<br>3. Alliance University')" class="text-orange-600 font-bold text-xs tracking-widest uppercase border-b-2 border-orange-500 pb-1 hover:text-[#1e3a8a] hover:border-[#1e3a8a] transition">Details <i class="fas fa-chevron-right ml-1"></i></button>
+            </div>
+
+            <div class="service-card p-10 rounded-[40px] bg-white">
+                <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-[#1e3a8a] mb-4">IT & Software</h3>
+                <p class="text-gray-500 text-sm mb-8">BCA and MCA programs with focus on Full Stack Development.</p>
+                <button onclick="openModal('IT & Software', '+2 with Maths/Computer Science preferred for BCA.', '1. MAHE Manipal<br>2. Reva University<br>3. St. Josephs')" class="text-orange-600 font-bold text-xs tracking-widest uppercase border-b-2 border-orange-500 pb-1 hover:text-[#1e3a8a] hover:border-[#1e3a8a] transition">Details <i class="fas fa-chevron-right ml-1"></i></button>
+            </div>
+
+            <div class="service-card p-10 rounded-[40px] bg-white">
+                <div class="w-14 h-14 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-user-nurse"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-[#1e3a8a] mb-4">Nursing & Health</h3>
+                <p class="text-gray-500 text-sm mb-8">B.Sc Nursing, BPT, and Pharmacy in recognized institutions.</p>
+                <button onclick="openModal('Nursing', '50% in +2 (PCB). Entrance scores might be needed for certain states.', '1. Nitte Mangalore<br>2. MVJ Bangalore<br>3. Father Mullers')" class="text-orange-600 font-bold text-xs tracking-widest uppercase border-b-2 border-orange-500 pb-1 hover:text-[#1e3a8a] hover:border-[#1e3a8a] transition">Details <i class="fas fa-chevron-right ml-1"></i></button>
+            </div>
+
+            <div class="service-card p-10 rounded-[40px] bg-white">
+                <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-[#1e3a8a] mb-4">Arts & Humanities</h3>
+                <p class="text-gray-500 text-sm mb-8">Psychology, English, and Journalism in India's top colleges.</p>
+                <button onclick="openModal('Arts & Humanities', 'Pass in +2 (Any stream). Higher percentage for top-tier colleges.', '1. Loyola College<br>2. MCC Chennai<br>3. Madras Christian')" class="text-orange-600 font-bold text-xs tracking-widest uppercase border-b-2 border-orange-500 pb-1 hover:text-[#1e3a8a] hover:border-[#1e3a8a] transition">Details <i class="fas fa-chevron-right ml-1"></i></button>
+            </div>
+
+            <div class="service-card p-10 rounded-[40px] bg-white">
+                <div class="w-14 h-14 bg-slate-100 text-slate-800 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-[#1e3a8a] mb-4">Law (LLB)</h3>
+                <p class="text-gray-500 text-sm mb-8">Integrated BA LLB / BBA LLB and 3-year LLB programs.</p>
+                <button onclick="openModal('Law Admissions', 'CLAT/LSAT scores or management quota seats available.', '1. Symbiosis Law<br>2. Christ University<br>3. School of Law Reva')" class="text-orange-600 font-bold text-xs tracking-widest uppercase border-b-2 border-orange-500 pb-1 hover:text-[#1e3a8a] hover:border-[#1e3a8a] transition">Details <i class="fas fa-chevron-right ml-1"></i></button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-24 bg-[#1e3a8a] text-white">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <div>
+                <i class="fas fa-file-invoice text-orange-400 text-4xl mb-6"></i>
+                <h4 class="text-xl font-bold mb-4">Doc Verification</h4>
+                <p class="text-blue-100/60 text-sm leading-relaxed">Admission documentation full assistance.</p>
+            </div>
+            <div>
+                <i class="fas fa-hands-helping text-orange-400 text-4xl mb-6"></i>
+                <h4 class="text-xl font-bold mb-4">Loan Support</h4>
+                <p class="text-blue-100/60 text-sm leading-relaxed">Bank loan guidance for all major banks.</p>
+            </div>
+            <div>
+                <i class="fas fa-user-check text-orange-400 text-4xl mb-6"></i>
+                <h4 class="text-xl font-bold mb-4">Mentoring</h4>
+                <p class="text-blue-100/60 text-sm leading-relaxed">Direct session with Abdul Azeez Alungal.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="detailsModal" class="hidden fixed inset-0 z-[100] bg-[#1e3a8a]/40 backdrop-blur-md items-center justify-center p-6">
+        <div class="bg-white rounded-[40px] max-w-lg w-full p-10 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-orange-500"><i class="fas fa-times text-2xl"></i></button>
+            <h2 id="modalTitle" class="text-3xl font-black text-[#1e3a8a] mb-8 italic">Course Details</h2>
+            <div class="space-y-8 mb-10">
+                <div>
+                    <h5 class="text-[10px] font-black uppercase tracking-widest text-orange-500 mb-2">Eligibility</h5>
+                    <p id="modalElig" class="text-gray-600 text-sm leading-relaxed"></p>
+                </div>
+                <div>
+                    <h5 class="text-[10px] font-black uppercase tracking-widest text-orange-500 mb-2">Partner Universities</h5>
+                    <p id="modalUni" class="text-gray-800 text-sm font-bold leading-relaxed"></p>
+                </div>
+            </div>
+            <a href="contact.html" class="block text-center bg-[#1e3a8a] text-white py-5 rounded-3xl font-bold hover:bg-orange-500 transition">CONTACT OUR TEAM</a>
+        </div>
+    </div>
+
+    <footer class="bg-[#0f172a] text-gray-400 py-16 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-black text-white mb-4 italic tracking-tighter">CAREER DRIVE <span class="text-orange-500">EDU</span></h2>
+            <p class="text-xs font-bold uppercase tracking-[0.4em] opacity-30">© 2026 Career Drive Edu Consultancy</p>
+        </div>
+    </footer>
+
+    <script>
+        function openModal(title, elig, unis) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalElig').innerHTML = elig;
+            document.getElementById('modalUni').innerHTML = unis;
+            document.getElementById('detailsModal').classList.add('modal-active');
+        }
+        function closeModal() {
+            document.getElementById('detailsModal').classList.remove('modal-active');
+        }
+        window.onclick = function(e) { if(e.target == document.getElementById('detailsModal')) closeModal(); }
+    </script>
+
+</body>
+</html>
