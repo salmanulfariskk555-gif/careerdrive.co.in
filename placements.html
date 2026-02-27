@@ -3,183 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Stories | Career Drive</title>
+    <title>Champions | Career Drive</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-        .success-card {
-            border: 1px solid #e5e7eb;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f9fbff; overflow-x: hidden; }
+
+        /* 1. EXACT HOME PAGE HAMBURGER STYLE */
+        #mobile-menu {
+            transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+            clip-path: circle(0% at 100% 0%);
         }
-        .success-card:hover {
-            border-color: #f97316;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
-            transform: translateY(-8px);
+        #mobile-menu.active { clip-path: circle(150% at 100% 0%); }
+
+        /* 2. WOW ANIMATION FOR CARDS */
+        @keyframes zoomInUp {
+            from { opacity: 0; transform: scale(0.8) translateY(50px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
-        .company-badge {
-            background: #f9fafb;
-            border: 1px solid #f3f4f6;
-            transition: 0.3s;
-        }
-        .success-card:hover .company-badge {
-            background: #fff7ed;
-            border-color: #fdba74;
+        .wow-animate { animation: zoomInUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+        /* 3. PILOT SPECIAL GLOW */
+        .pilot-card {
+            border: 3px solid #f97316;
+            box-shadow: 0 20px 40px rgba(249, 115, 22, 0.25);
         }
     </style>
 </head>
-<body class="bg-white text-slate-900">
+<body>
 
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-6 py-4">
+    <nav class="sticky top-0 z-[100] bg-white shadow-sm px-6 py-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-2">
-                <span class="text-2xl font-black tracking-tighter text-black">CAREER DRIVE<span class="text-orange-500">.</span></span>
-            </a>
-            <a href="index.html#contact" class="bg-black text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-orange-600 transition-all shadow-lg shadow-black/10">
-                Get Started
-            </a>
+            <div class="flex items-center space-x-2">
+                <div class="h-10 w-10 bg-[#1e3a8a] rounded-xl flex items-center justify-center text-white font-black">CD</div>
+                <div>
+                    <h1 class="text-xl font-extrabold text-[#1e3a8a]">CAREER DRIVE</h1>
+                    <span class="text-[9px] font-bold text-orange-500 uppercase tracking-widest">Edu Consultancy</span>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex space-x-8 font-bold text-[#1e3a8a] text-xs uppercase tracking-widest">
+                <a href="index.html" class="hover:text-orange-500 transition">Home</a>
+                <a href="services.html" class="hover:text-orange-500 transition">Services</a>
+                <a href="placements.html" class="text-orange-500">Placements</a>
+                <a href="scholarships.html" class="hover:text-orange-500 transition">Scholarships</a>
+                <a href="contact.html" class="hover:text-orange-500 transition">Contact</a>
+            </div>
+
+            <button id="hamburger-btn" class="lg:hidden relative z-[110] text-[#1e3a8a] p-2 focus:outline-none">
+                <i class="fas fa-bars text-3xl transition-all duration-300" id="nav-icon"></i>
+            </button>
         </div>
     </nav>
 
-    <header class="py-20 bg-[#fafafa]">
-        <div class="container mx-auto px-6 text-center">
-            <h4 class="text-orange-500 font-bold tracking-[0.2em] uppercase text-sm mb-4">The Success Wall</h4>
-            <h1 class="text-5xl md:text-7xl font-black text-black mb-6 tracking-tight">
-                Our Placed <span class="italic text-orange-500">Legends.</span>
-            </h1>
-            <p class="text-gray-500 text-lg max-w-2xl mx-auto">
-                Career Drive-iloode admission eduthu, ippo lokathile top companies-il joli cheyyunna nammude kuttikaൾ.
-            </p>
+    <div id="mobile-menu" class="fixed inset-0 bg-[#1e3a8a] z-[105] flex flex-col items-center justify-center space-y-8 text-white">
+        <a href="index.html" class="text-2xl font-bold hover:text-orange-400">Home</a>
+        <a href="services.html" class="text-2xl font-bold hover:text-orange-400">Services</a>
+        <a href="placements.html" class="text-2xl font-bold text-orange-400 underline decoration-2 underline-offset-8">Placements</a>
+        <a href="scholarships.html" class="text-2xl font-bold hover:text-orange-400">Scholarships</a>
+        <a href="contact.html" class="text-2xl font-bold hover:text-orange-400">Contact</a>
+        <div class="pt-8">
+            <a href="https://wa.me/919495209080" class="bg-orange-500 text-white px-10 py-4 rounded-2xl font-black shadow-lg">WHATSAPP US</a>
         </div>
-    </header>
+    </div>
 
-    <section class="py-20 container mx-auto px-6">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section class="bg-[#1e3a8a] pt-16 pb-24 px-6 text-center text-white rounded-b-[60px] md:rounded-b-[100px] shadow-2xl relative">
+        <h2 class="text-4xl md:text-7xl font-black mb-4 wow-animate">Flying <span class="text-orange-500">High!</span></h2>
+        <p class="text-blue-100 max-w-xl mx-auto font-medium opacity-80 wow-animate" style="animation-delay: 0.2s;">ഞങ്ങളുടെ അഭിമാന താരങ്ങൾ - ലോകത്തിന്റെ വിവിധ കോണുകളിൽ തിളങ്ങുന്നവർ.</p>
+    </section>
 
-            <div class="success-card rounded-[40px] p-4 bg-white">
-                <div class="relative overflow-hidden rounded-[32px] mb-6">
-                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&h=500&fit=crop" class="w-full h-[350px] object-cover">
-                    <div class="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-4 rounded-2xl">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-black text-orange-600 uppercase">Infosys</span>
-                            <i class="fas fa-check-circle text-blue-500"></i>
-                        </div>
-                    </div>
+    <section class="container mx-auto px-4 -mt-10 pb-20">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-10">
+
+            <div class="wow-animate bg-white rounded-[40px] shadow-2xl overflow-hidden pilot-card border-b-8 border-orange-500" style="animation-delay: 0.3s;">
+                <div class="relative">
+                    <img src="https://i.postimg.cc/sDv7pnjw/Whats-App-Image-2026-02-27-at-8-48-53-PM.jpg" class="w-full aspect-[3/4] object-cover">
+                    <span class="absolute top-4 left-4 bg-orange-600 text-white text-[9px] font-black px-4 py-1.5 rounded-full uppercase shadow-lg"><i class="fas fa-plane mr-1"></i> Aviation Star</span>
                 </div>
-                <div class="px-4 pb-6">
-                    <h3 class="text-2xl font-bold mb-1">Adarsh Kumar</h3>
-                    <p class="text-gray-500 text-sm font-medium mb-4 italic">Software Engineer</p>
-                    <div class="company-badge p-3 rounded-xl flex items-center space-x-3 mb-4">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" class="h-4">
-                        <span class="text-[10px] font-bold text-gray-400">BANGALORE HQ</span>
-                    </div>
-                    <p class="text-gray-600 text-sm leading-relaxed italic">"Career Drive nalkiya orientation aanu enikku ee career thiranjedukkan sahayichathu."</p>
+                <div class="p-4 md:p-6 text-center">
+                    <h3 class="text-sm md:text-xl font-black text-[#1e3a8a] leading-tight">Mohammed Ali Palakkal</h3>
+                    <p class="text-[10px] md:text-xs font-bold text-orange-600 mt-2 uppercase">Captain, AIR INDIA</p>
                 </div>
             </div>
 
-            <div class="success-card rounded-[40px] p-4 bg-white">
-                <div class="relative overflow-hidden rounded-[32px] mb-6">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&h=500&fit=crop" class="w-full h-[350px] object-cover">
-                    <div class="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-4 rounded-2xl">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-black text-orange-600 uppercase">Google</span>
-                            <i class="fas fa-check-circle text-blue-500"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-4 pb-6">
-                    <h3 class="text-2xl font-bold mb-1">Sneha Mariyam</h3>
-                    <p class="text-gray-500 text-sm font-medium mb-4 italic">Data Analyst</p>
-                    <div class="company-badge p-3 rounded-xl flex items-center space-x-3 mb-4">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="h-4">
-                        <span class="text-[10px] font-bold text-gray-400">HYDERABAD</span>
-                    </div>
-                    <p class="text-gray-600 text-sm leading-relaxed italic">"Admission mathramalla, placement vare Career Drive support cheyyunnundu."</p>
+            <div class="wow-animate bg-white rounded-[40px] shadow-xl overflow-hidden border-b-8 border-slate-200" style="animation-delay: 0.4s;">
+                <img src="https://i.postimg.cc/zGLmY1J3/Whats-App-Image-2026-02-27-at-8-44-38-PM.jpg" class="w-full aspect-[3/4] object-cover">
+                <div class="p-4 md:p-6 text-center">
+                    <h3 class="text-sm md:text-xl font-black text-[#1e3a8a] leading-tight">Anas Perincheeri</h3>
+                    <p class="text-[10px] md:text-xs font-bold text-slate-500 mt-2 uppercase">Sr. Tech Support Engineer</p>
                 </div>
             </div>
 
-            <div class="success-card rounded-[40px] p-4 bg-white">
-                <div class="relative overflow-hidden rounded-[32px] mb-6">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&h=500&fit=crop" class="w-full h-[350px] object-cover">
-                    <div class="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-4 rounded-2xl">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-black text-orange-600 uppercase">TCS</span>
-                            <i class="fas fa-check-circle text-blue-500"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-4 pb-6">
-                    <h3 class="text-2xl font-bold mb-1">Mohammed Shafi</h3>
-                    <p class="text-gray-500 text-sm font-medium mb-4 italic">Systems Engineer</p>
-                    <div class="company-badge p-3 rounded-xl flex items-center space-x-3 mb-4">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Tata_Consultancy_Services_Logo.svg" class="h-5">
-                        <span class="text-[10px] font-bold text-gray-400">KOCHI</span>
-                    </div>
-                    <p class="text-gray-600 text-sm leading-relaxed italic">"Career Drive through poyathukondu enikku nalla scholarship-um placement-um kitti."</p>
+            <div class="wow-animate bg-white rounded-[40px] shadow-xl overflow-hidden border-b-8 border-slate-200" style="animation-delay: 0.5s;">
+                <img src="https://i.postimg.cc/fyHP18p1/Whats-App-Image-2026-02-27-at-8-44-40-PM.jpg" class="w-full aspect-[3/4] object-cover">
+                <div class="p-4 md:p-6 text-center">
+                    <h3 class="text-sm md:text-xl font-black text-[#1e3a8a] leading-tight">Dr. Sumbula Manzoor</h3>
+                    <p class="text-[10px] md:text-xs font-bold text-slate-500 mt-2 uppercase">Dental Surgeon</p>
                 </div>
             </div>
 
-            <div class="success-card rounded-[40px] p-4 bg-white">
-                <div class="relative overflow-hidden rounded-[32px] mb-6">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&h=500&fit=crop" class="w-full h-[350px] object-cover">
-                    <div class="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-4 rounded-2xl">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-black text-orange-600 uppercase">Accenture</span>
-                            <i class="fas fa-check-circle text-blue-500"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-4 pb-6">
-                    <h3 class="text-2xl font-bold mb-1">Rahul Das</h3>
-                    <p class="text-gray-500 text-sm font-medium mb-4 italic">Full Stack Developer</p>
-                    <div class="company-badge p-3 rounded-xl flex items-center space-x-3 mb-4">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg" class="h-4">
-                        <span class="text-[10px] font-bold text-gray-400">CHENNAI</span>
-                    </div>
-                    <p class="text-gray-600 text-sm leading-relaxed italic">"Trustworthy service. Proper guidance provided for career selection."</p>
+            <div class="wow-animate bg-white rounded-[40px] shadow-xl overflow-hidden border-b-8 border-slate-200" style="animation-delay: 0.6s;">
+                <img src="https://i.postimg.cc/254KCkgv/Whats-App-Image-2026-02-27-at-8-44-42-PM.jpg" class="w-full aspect-[3/4] object-cover">
+                <div class="p-4 md:p-6 text-center">
+                    <h3 class="text-sm md:text-xl font-black text-[#1e3a8a] leading-tight">Ameenul Ahsan</h3>
+                    <p class="text-[10px] md:text-xs font-bold text-slate-500 mt-2 uppercase">Senior IT Manager</p>
                 </div>
             </div>
 
-            <div class="success-card rounded-[40px] p-4 bg-white">
-                <div class="relative overflow-hidden rounded-[32px] mb-6">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&h=500&fit=crop" class="w-full h-[350px] object-cover">
-                    <div class="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-4 rounded-2xl">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-black text-orange-600 uppercase">Wipro</span>
-                            <i class="fas fa-check-circle text-blue-500"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-4 pb-6">
-                    <h3 class="text-2xl font-bold mb-1">Anjali Nair</h3>
-                    <p class="text-gray-500 text-sm font-medium mb-4 italic">Business Consultant</p>
-                    <div class="company-badge p-3 rounded-xl flex items-center space-x-3 mb-4">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Wipro_Logo_2017-current.svg" class="h-6">
-                        <span class="text-[10px] font-bold text-gray-400">PUNE</span>
-                    </div>
-                    <p class="text-gray-600 text-sm leading-relaxed italic">"I strongly recommend Career Drive for professional education consulting."</p>
-                </div>
+            <div class="wow-animate bg-[#1e3a8a] rounded-[40px] shadow-2xl flex flex-col items-center justify-center p-8 text-center aspect-[3/4] border-4 border-dashed border-orange-500/40" style="animation-delay: 0.7s;">
+                <div class="h-20 w-20 bg-orange-500 rounded-full flex items-center justify-center text-white text-5xl font-black mb-6 shadow-xl">?</div>
+                <h3 class="text-white font-black text-2xl leading-tight">YOU ARE <br>NEXT!</h3>
+                <a href="https://wa.me/919495209080" class="mt-8 bg-white text-[#1e3a8a] px-8 py-3 rounded-full font-black text-xs uppercase tracking-widest shadow-lg">Start Now</a>
             </div>
 
         </div>
     </section>
 
-    <section class="py-24">
-        <div class="container mx-auto px-6">
-            <div class="bg-black rounded-[50px] p-12 md:p-24 text-center text-white relative overflow-hidden">
-                <h2 class="text-4xl md:text-6xl font-black mb-8 italic">Your Success Starts Here.</h2>
-                <p class="text-gray-400 mb-12 max-w-xl mx-auto">Admission help veno? Namukk samsarikkaam.</p>
-                <a href="index.html#contact" class="bg-orange-500 text-white px-12 py-5 rounded-full font-black text-lg hover:scale-105 transition-all shadow-xl shadow-orange-500/20 inline-block">
-                    CONTACT OUR TEAM
-                </a>
+    <section class="py-20 px-6 container mx-auto">
+        <div class="bg-white rounded-[50px] p-10 md:p-16 shadow-2xl flex flex-col md:flex-row items-center justify-between">
+            <div class="text-center md:text-left">
+                <h2 class="text-4xl font-black text-[#1e3a8a] mb-6">Get In Touch</h2>
+                <div class="space-y-4 font-bold text-slate-600 text-sm">
+                    <p class="flex items-center justify-center md:justify-start"><i class="fas fa-phone-alt text-orange-500 mr-4"></i> +91 9495 209 080</p>
+                    <p class="flex items-center justify-center md:justify-start"><i class="fas fa-envelope text-orange-500 mr-4"></i> careerdrive@gmail.com</p>
+                    <p class="flex items-center justify-center md:justify-start"><i class="fas fa-map-marker-alt text-orange-500 mr-4"></i> Kondotty, Malappuram</p>
+                </div>
             </div>
+            <a href="https://wa.me/919495209080" class="mt-10 md:mt-0 bg-[#25D366] text-white px-12 py-5 rounded-3xl font-black text-xl flex items-center shadow-2xl shadow-green-500/20">
+                <i class="fab fa-whatsapp mr-3 text-3xl"></i> WhatsApp
+            </a>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-gray-100 text-center">
-        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">© 2026 CAREER DRIVE EDU CONSULTANCY</p>
-    </footer>
+    <script>
+        // HAMBURGER TRANSFORMATION LOGIC
+        const menuBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navIcon = document.getElementById('nav-icon');
+
+        menuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('active');
+
+            // Icon Change: Bars to X (Times)
+            if (isOpen) {
+                navIcon.classList.remove('fa-bars');
+                navIcon.classList.add('fa-times'); // X ചിഹ്നം വരുന്നു
+                navIcon.classList.add('text-white'); // മെനുവിൽ കാണാൻ വെള്ള നിറം
+            } else {
+                navIcon.classList.remove('fa-times');
+                navIcon.classList.add('fa-bars');
+                navIcon.classList.remove('text-white');
+            }
+        });
+    </script>
 
 </body>
 </html>
