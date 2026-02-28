@@ -7,7 +7,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+<button id="menu-btn" class="lg:hidden text-[#1e3a8a] p-2 focus:outline-none">
+    <i class="fas fa-bars text-2xl"></i>
+</button>
+<div id="overlay" class="fixed inset-0 bg-black/60 z-[60] hidden" onclick="toggleMenu()"></div>
+
+<div id="sidebar" class="fixed top-0 left-0 h-full w-[280px] bg-white z-[70] shadow-2xl lg:hidden transition-transform duration-300 -translate-x-full">
+    <div class="bg-[#1e3a8a] p-8 text-white text-center font-bold uppercase">career deive edu </div>
+    <div class="p-6 flex flex-col space-y-6 font-bold text-slate-700 uppercase text-sm">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="placements.html">Placements</a>
+        <a href="scholarship.html" class="text-orange-500">Scholarships</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
 <body class="bg-slate-50 font-sans text-slate-900">
+
 
     <section class="bg-[#1e3a8a] py-20 text-center text-white px-6">
         <h1 class="text-4xl md:text-6xl font-black mb-6">Partner University Scholarships 2026</h1>
@@ -154,6 +170,16 @@
                 resultBox.innerHTML = "Please contact us for special scholarship programs.";
             }
         }
+        function toggleMenu() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    // Sidebar-inte class 'open' aakkunnu
+    sidebar.classList.toggle('-translate-x-full');
+    overlay.classList.toggle('hidden');
+}
+
+document.getElementById('menu-btn').addEventListener('click', toggleMenu);
     </script>
 </body>
 </html>
