@@ -3,38 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Career Drive Edu</title>
+    <title>Contact Us | Career Drive Edu 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; }
-        .input-field {
-            border: 1px solid #e5e7eb;
-            transition: all 0.3s ease;
-        }
-        .input-field:focus {
-            border-color: #f97316;
-            outline: none;
-            box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
+        .input-field { border: 1px solid #e5e7eb; transition: all 0.3s ease; }
+        .input-field:focus { border-color: #f97316; outline: none; box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1); }
         .contact-card { transition: all 0.3s ease; }
         .contact-card:hover { transform: translateY(-5px); }
+
+        /* Reveal Animation */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        #sidebar { transition: transform 0.4s ease-in-out; }
     </style>
 </head>
-<body>
+<body class="bg-white text-slate-900">
 
-    <nav class="border-b border-gray-100 py-6 px-6 sticky top-0 bg-white/90 backdrop-blur-md z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-2">
-                <span class="text-2xl font-black tracking-tighter text-black">CAREER DRIVE<span class="text-orange-500">.</span></span>
-            </a>
-            <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-black transition">BACK TO HOME</a>
+    <nav class="sticky top-0 z-[100] bg-white/90 backdrop-blur-md shadow-sm border-b">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="h-10 w-10 bg-orange-500 rounded-lg flex items-center justify-center text-white font-extrabold shadow-lg">CD</div>
+                <div class="leading-none">
+                    <h1 class="text-xl font-extrabold text-[#1e3a8a] tracking-tight uppercase">CAREER DRIVE EDU</h1>
+                    <p class="text-[8px] font-bold text-orange-600 tracking-widest uppercase">Consultancy</p>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex space-x-8 font-bold text-[#1e3a8a] text-sm uppercase tracking-wider">
+                <a href="index.html" class="hover:text-orange-500 transition">Home</a>
+                <a href="https://careerdrive.co.in/services/" class="hover:text-orange-500 transition">Services</a>
+                <a href="placements.html" class="hover:text-orange-500 transition">Placements</a>
+                <a href="scholarship.html" class="hover:text-orange-500 transition">Scholarships</a>
+                <a href="contact.html" class="text-orange-500 border-b-2 border-orange-500">Contact</a>
+                <a href="https://careerdrive.co.in/apply/" target="_blank" class="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-[#1e3a8a] transition shadow-lg shadow-orange-500/20">APPLY NOW</a>
+            </div>
+
+            <button onclick="toggleMenu()" class="lg:hidden text-[#1e3a8a] p-2 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
         </div>
     </nav>
 
+    <div id="overlay" class="fixed inset-0 bg-black/60 z-[110] hidden transition-opacity" onclick="toggleMenu()"></div>
+    <div id="sidebar" class="fixed top-0 right-0 h-full w-[280px] bg-white z-[120] shadow-2xl lg:hidden transition-transform duration-300 translate-x-full border-l">
+        <div class="bg-[#1e3a8a] p-8 text-white flex flex-col items-center">
+            <div class="h-16 w-16 bg-white rounded-full flex items-center justify-center text-[#1e3a8a] text-2xl font-bold mb-3 shadow-xl">CD</div>
+            <div class="text-sm font-bold tracking-widest uppercase text-white">Career Drive Menu</div>
+        </div>
+        <div class="p-6 flex flex-col space-y-6 font-bold text-slate-700 uppercase text-sm">
+            <a href="index.html" class="flex items-center"><i class="fas fa-home mr-4 text-orange-500"></i> Home</a>
+            <a href="https://careerdrive.co.in/services/" class="flex items-center"><i class="fas fa-briefcase mr-4 text-orange-500"></i> Services</a>
+            <a href="placements.html" class="flex items-center"><i class="fas fa-user-graduate mr-4 text-orange-500"></i> Placements</a>
+            <a href="scholarship.html" class="flex items-center"><i class="fas fa-graduation-cap mr-4 text-orange-500"></i> Scholarships</a>
+            <a href="contact.html" class="flex items-center text-orange-500"><i class="fas fa-phone-alt mr-4"></i> Contact</a>
+            <a href="https://careerdrive.co.in/apply/" target="_blank" class="bg-orange-500 text-white text-center py-4 rounded-xl mt-4 font-black shadow-lg">APPLY ADMISSION</a>
+        </div>
+    </div>
+
     <header class="py-20 bg-[#fafafa] border-b border-gray-100">
-        <div class="container mx-auto px-6 text-center">
+        <div class="container mx-auto px-6 text-center reveal">
             <h1 class="text-5xl md:text-6xl font-black text-black mb-6 tracking-tight">Let's <span class="text-orange-500 italic">Connect.</span></h1>
             <p class="text-gray-500 text-lg max-w-xl mx-auto font-medium">Have questions about admissions or scholarships? Our experts are here to help you guide your career path.</p>
         </div>
@@ -42,8 +73,7 @@
 
     <section class="py-24 container mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-20">
-
-            <div class="space-y-12">
+            <div class="space-y-12 reveal">
                 <div>
                     <h2 class="text-3xl font-extrabold mb-8">Reach out to us</h2>
                     <div class="space-y-8">
@@ -53,7 +83,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-lg">Our Office</h4>
-                                <p class="text-gray-500 leading-relaxed">Career Drive Edu Consultancy,<br>Kondotty, Malappuram, Kerala - 673638</p>
+                                <p class="text-gray-500 leading-relaxed">Career Drive Edu Consultancy,<br>Pazheri Building, Near Prashanti Ayurveda,<br>Chungam, Kondotty, Kerala - 673638</p>
                             </div>
                         </div>
 
@@ -64,11 +94,11 @@
                             <div>
                                 <h4 class="font-bold text-lg">Call Support</h4>
                                 <p class="text-gray-500">+91 94952 09080</p>
-                                <p class="text-gray-500">+91 7591952244</p>
+                                <p class="text-gray-500">+91 75919 52244</p>
                             </div>
                         </div>
 
-                        <a href="https://wa.me/919495209080" class="flex items-start space-x-6 contact-card group">
+                        <a href="https://wa.me/919495209080" target="_blank" class="flex items-start space-x-6 contact-card group">
                             <div class="bg-green-100 p-4 rounded-2xl text-green-600 group-hover:bg-green-600 group-hover:text-white transition">
                                 <i class="fab fa-whatsapp text-xl"></i>
                             </div>
@@ -80,33 +110,39 @@
                     </div>
                 </div>
 
-                <div class="rounded-[40px] overflow-hidden border border-gray-100 shadow-sm h-72">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62635.84518428887!2d75.92205567784654!3d11.132644400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba645851a70014b%3A0xc6380c7d363d67f8!2sKondotty%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
-                </div>
+             <div class="rounded-[40px] overflow-hidden border border-gray-100 shadow-sm h-72 reveal">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.363415190989!2d75.96453227473064!3d11.145007488992035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64fe3f303aeaf%3A0x7bcb5bc2ebdef833!2sCareer%20info%20Center%20education%20services!5e0!3m2!1sen!2sin!4v1740924900000!5m2!1sen!2sin"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
             </div>
 
-            <div class="bg-[#fafafa] p-10 md:p-16 rounded-[50px] border border-gray-100">
+            <div class="bg-[#fafafa] p-10 md:p-16 rounded-[50px] border border-gray-100 reveal">
                 <h3 class="text-2xl font-black mb-8">Send an Enquiry</h3>
                 <form action="#" class="space-y-6">
                     <div>
                         <label class="block text-xs font-black uppercase tracking-widest text-gray-400 mb-2">Full Name</label>
-                        <input type="text" placeholder="John Doe" class="w-full px-6 py-4 rounded-2xl input-field bg-white">
+                        <input type="text" placeholder="Your Name" class="w-full px-6 py-4 rounded-2xl input-field bg-white" required>
                     </div>
                     <div>
                         <label class="block text-xs font-black uppercase tracking-widest text-gray-400 mb-2">Phone Number</label>
-                        <input type="tel" placeholder="+91 00000 00000" class="w-full px-6 py-4 rounded-2xl input-field bg-white">
+                        <input type="tel" placeholder="+91 00000 00000" class="w-full px-6 py-4 rounded-2xl input-field bg-white" required>
                     </div>
                     <div>
                         <label class="block text-xs font-black uppercase tracking-widest text-gray-400 mb-2">Preferred Course</label>
-                        <select class="w-full px-6 py-4 rounded-2xl input-field bg-white appearance-none">
-                            <option>Engineering (B.Tech)</option>
-                            <option>Medicine (MBBS)</option>
-                            <option>Management (MBA/BBA)</option>
-                            <option>Nursing / Allied Health</option>
-                            <option>Other Courses</option>
+                        <select class="w-full px-6 py-4 rounded-2xl input-field bg-white cursor-pointer">
+                            <option>Medical (MBBS, BDS, BAMS)</option>
+                            <option>Engineering (B.Tech, BE)</option>
+                            <option>Management (MBA, BBA)</option>
+                            <option>Nursing & Allied Health</option>
+                            <option>Paramedical Courses</option>
+                            <option>Degree / PG Courses</option>
                         </select>
                     </div>
                     <div>
@@ -118,33 +154,79 @@
                     </button>
                 </form>
             </div>
-
         </div>
     </section>
 
-    <section class="py-20 border-t border-gray-100">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-center md:text-left">
-                <h4 class="font-black text-xl mb-2 text-black">Follow Our Updates</h4>
-                <p class="text-gray-400 text-sm">Stay connected for latest admission news.</p>
-            </div>
-            <div class="flex space-x-6">
-                <a href="#" class="h-14 w-14 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-orange-500 hover:bg-white hover:shadow-lg transition">
-                    <i class="fab fa-instagram text-xl"></i>
-                </a>
-                <a href="#" class="h-14 w-14 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-blue-600 hover:bg-white hover:shadow-lg transition">
-                    <i class="fab fa-facebook-f text-xl"></i>
-                </a>
-                <a href="#" class="h-14 w-14 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-blue-400 hover:bg-white hover:shadow-lg transition">
-                    <i class="fab fa-twitter text-xl"></i>
-                </a>
-            </div>
+   <section class="py-20 border-t border-gray-100 reveal">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-center md:text-left">
+            <h4 class="font-black text-xl mb-2 text-black tracking-tight">Follow Our Updates</h4>
+            <p class="text-gray-400 text-sm font-medium">Stay connected for latest admission news & alerts.</p>
         </div>
-    </section>
+
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="https://www.instagram.com/career___drive?igsh=czV2bDg1MTNzOHNs"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="h-14 w-14 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-[#ee2a7b] hover:bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                <i class="fab fa-instagram text-2xl"></i>
+            </a>
+
+            <a href="https://www.facebook.com/share/18GssqX9FT/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="h-14 w-14 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-[#1877F2] hover:bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                <i class="fab fa-facebook-f text-2xl"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/abdul-azeez-alungal-52793a3b2"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="h-14 w-14 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-[#0077b5] hover:bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                <i class="fab fa-linkedin-in text-2xl"></i>
+            </a>
+
+            <a href="https://www.threads.net/@career___drive"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="h-14 w-14 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-black hover:bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                <i class="fa-brands fa-threads text-2xl"></i>
+            </a>
+
+            <a href="https://wa.me/919495209080"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="h-14 w-14 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-[#25D366] hover:bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                <i class="fab fa-whatsapp text-2xl"></i>
+            </a>
+        </div>
+    </div>
+</section>
 
     <footer class="py-12 text-center text-gray-400 text-[10px] font-bold uppercase tracking-[0.4em]">
         © 2026 Career Drive Edu Consultancy | Developed for Excellence
     </footer>
 
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            if (sidebar.classList.contains('translate-x-full')) {
+                sidebar.classList.remove('translate-x-full'); sidebar.classList.add('translate-x-0');
+                overlay.classList.remove('hidden'); document.body.style.overflow = 'hidden';
+            } else {
+                sidebar.classList.add('translate-x-full'); sidebar.classList.remove('translate-x-0');
+                overlay.classList.add('hidden'); document.body.style.overflow = 'auto';
+            }
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
