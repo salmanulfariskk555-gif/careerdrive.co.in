@@ -13,34 +13,41 @@
     </style>
 <nav class="fixed top-0 left-0 w-full z-50 bg-[#1e3a8a]/90 backdrop-blur-lg border-b border-white/10">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="index.html" class="text-xl font-black text-white italic tracking-tighter">
+        <a href="/" class="text-xl font-black text-white italic tracking-tighter">
             CAREER DRIVE <span class="text-orange-500">EDU</span>
         </a>
 
-        <div class="hidden md:flex gap-8 text-[10px] font-bold text-white uppercase tracking-widest">
-            <a href="index.html" class="hover:text-orange-500 transition">Home</a>
-            <a href="services.html" class="text-orange-500 underline underline-offset-8">Services</a>
-            <a href="scholarships.html" class="hover:text-orange-500 transition">Scholarships</a>
-            <a href="placements.html" class="hover:text-orange-500 transition">Placement</a>
-            <a href="contact.html" class="hover:text-orange-500 transition">Contact</a>
+        <div class="hidden md:flex items-center gap-8 text-[10px] font-bold text-white uppercase tracking-widest">
+            <a href="/" class="hover:text-orange-500 transition">Home</a>
+            <a href="/services" class="text-orange-500 underline underline-offset-8">Services</a>
+            <a href="/scholarships" class="hover:text-orange-500 transition">Scholarships</a>
+            <a href="/placements" class="hover:text-orange-500 transition">Placement</a>
+            <a href="/contact" class="hover:text-orange-500 transition">Contact</a>
+
+            <a href="/apply" class="ml-4 bg-orange-500 text-white px-5 py-2 rounded-full font-black hover:bg-white hover:text-[#1e3a8a] transition shadow-lg shadow-orange-500/20">
+                Apply Now
+            </a>
         </div>
 
-        <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+        <button id="menuBtn" class="md:hidden text-white focus:outline-none p-2">
             <i class="fas fa-bars text-2xl"></i>
         </button>
     </div>
 
     <div id="mobileMenu" class="hidden md:hidden bg-[#1e3a8a] border-t border-white/10 px-6 py-8">
         <div class="flex flex-col gap-6 text-xs font-black text-white uppercase tracking-[0.2em]">
-            <a href="index.html">Home</a>
-            <a href="services.html" class="text-orange-500">Services</a>
-            <a href="scholarships.html">Scholarships</a>
-            <a href="placements.html">Placement</a>
-            <a href="contact.html">Contact</a>
+            <a href="/" class="hover:text-orange-500 transition">Home</a>
+            <a href="/services" class="text-orange-500">Services</a>
+            <a href="/scholarships" class="hover:text-orange-500 transition">Scholarships</a>
+            <a href="/placements" class="hover:text-orange-500 transition">Placement</a>
+            <a href="/contact" class="hover:text-orange-500 transition">Contact</a>
+
+            <a href="/apply" class="mt-4 bg-orange-500 text-white p-4 rounded-2xl text-center font-black tracking-widest shadow-lg">
+                APPLY FOR ADMISSION
+            </a>
         </div>
     </div>
 </nav>
-
 <div class="h-16 md:h-20"></div>
     <header class="hero-gradient text-white py-20 relative overflow-hidden">
     <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
@@ -468,11 +475,11 @@
             Expert <span class="text-[#1e3a8a]">Admission Guidance</span> Since 2001
         </p>
 
-        <div class="flex justify-center gap-8 mb-8 text-[9px] font-black text-slate-500 uppercase tracking-widest">
-            <a href="index.html" class="hover:text-orange-500 transition">Home</a>
-            <a href="scholarship.html" class="hover:text-orange-500 transition">Scholarships</a>
-            <a href="contact.html" class="hover:text-orange-500 transition">Contact Us</a>
-        </div>
+       <div class="flex justify-center gap-8 mb-8 text-[9px] font-black text-slate-500 uppercase tracking-widest">
+    <a href="/" class="hover:text-orange-500 transition">Home</a>
+    <a href="/scholarships" class="hover:text-orange-500 transition">Scholarships</a>
+    <a href="/contact" class="hover:text-orange-500 transition">Contact Us</a>
+</div>
 
         <div class="flex justify-center gap-4 mb-8">
             <a href="https://wa.me/919495209080" class="w-10 h-10 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#25D366] hover:text-white transition shadow-sm">
@@ -491,62 +498,115 @@
     </div>
 </footer>
 <script>
-    // Course Modal Logic
+    // 1. Course Modal Logic
     function openCourse(title, elig, unis) {
-        document.getElementById('courseTitle').innerText = title;
-        document.getElementById('courseElig').innerText = elig;
-        document.getElementById('courseUnis').innerText = unis;
+        const titleEl = document.getElementById('courseTitle');
+        const eligEl = document.getElementById('courseElig');
+        const unisEl = document.getElementById('courseUnis');
+        const waLink = document.getElementById('courseWa');
+        const modal = document.getElementById('cModal');
 
-        const phone = "919495209080";
-        const text = `Hi Career Drive, I am looking for admission in ${title}.`;
-        document.getElementById('courseWa').href = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+        if (titleEl && eligEl && unisEl && waLink && modal) {
+            titleEl.innerText = title;
+            eligEl.innerText = elig;
+            unisEl.innerText = unis;
 
-        document.getElementById('cModal').classList.remove('hidden');
-        document.getElementById('cModal').classList.add('flex');
+            const phone = "919495209080";
+            const text = `Hi Career Drive, I am looking for admission in ${title}.`;
+            waLink.href = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
     }
 
     function closeCourse() {
-        document.getElementById('cModal').classList.add('hidden');
-        document.getElementById('cModal').classList.remove('flex');
+        const modal = document.getElementById('cModal');
+        if (modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
     }
 
-    // University Modal Logic
+    // 2. University Modal Logic
     function openUni(title, loc, courses, phone) {
-        document.getElementById('uT').innerText = title;
-        document.getElementById('uL').innerText = loc;
-        document.getElementById('uC').innerText = courses;
+        const uT = document.getElementById('uT');
+        const uL = document.getElementById('uL');
+        const uC = document.getElementById('uC');
+        const uW = document.getElementById('uW');
+        const modal = document.getElementById('uDetailModal');
 
-        const text = `Hi Career Drive, I am interested in ${title} (${loc}).`;
-        document.getElementById('uW').href = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+        if (uT && uL && uC && uW && modal) {
+            uT.innerText = title;
+            uL.innerText = loc;
+            uC.innerText = courses;
 
-        document.getElementById('uDetailModal').classList.remove('hidden');
-        document.getElementById('uDetailModal').classList.add('flex');
+            const text = `Hi Career Drive, I am interested in ${title} (${loc}).`;
+            uW.href = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
     }
 
     function closeUni() {
-        document.getElementById('uDetailModal').classList.add('hidden');
-        document.getElementById('uDetailModal').classList.remove('flex');
+        const modal = document.getElementById('uDetailModal');
+        if (modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
     }
 
-    // Close on Background Click
+    // 3. Close on Background Click
     window.onclick = function(e) {
         if (e.target.id === 'cModal') closeCourse();
         if (e.target.id === 'uDetailModal') closeUni();
     }
-    // ഹാംബർഗർ മെനു ഓപ്പൺ ചെയ്യാനും ക്ലോസ് ചെയ്യാനുമുള്ള കോഡ്
-const menuBtn = document.getElementById('menuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
 
-menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    // മെനു ഐക്കൺ മാറ്റാൻ (Bars to X)
-    const icon = menuBtn.querySelector('i');
-    if (mobileMenu.classList.contains('hidden')) {
-        icon.classList.replace('fa-times', 'fa-bars');
-    } else {
-        icon.classList.replace('fa-bars', 'fa-times');
+    // 4. Hamburger Menu (Mobile Menu) Logic
+    // DOM പൂർണ്ണമായും ലോഡ് ആയതിനുശേഷം മാത്രം ഇത് പ്രവർത്തിക്കും
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+
+                // മെനു ഐക്കൺ മാറ്റാൻ (Bars to X)
+                const icon = menuBtn.querySelector('i');
+                if (icon) {
+                    if (mobileMenu.classList.contains('hidden')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    } else {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    }
+                }
+            });
+        }
+    });
+
+    // ഹാംബർഗർ മെനു ലോജിക്
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            // മെനു കാണിക്കാനും മറയ്ക്കാനും
+            mobileMenu.classList.toggle('hidden');
+
+            // ഐക്കൺ മാറ്റാൻ (Bars <-> Times)
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.replace('fa-times', 'fa-bars');
+            } else {
+                icon.classList.replace('fa-bars', 'fa-times');
+            }
+        });
     }
-});
+
 </script>
 </body>
 </html>
