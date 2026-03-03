@@ -14,12 +14,11 @@
         input:focus, select:focus { border-color: #f97316; background: white; box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1); }
         label { display: block; font-size: 0.75rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
     </style>
-</head>
-<body class="pb-20">
+</head> <body class="pb-20">
 
     <div class="bg-[#1e3a8a] pt-10 pb-24 px-6 rounded-b-[50px] shadow-lg">
         <div class="max-w-4xl mx-auto flex flex-col items-center">
-            <a href="index.html" class="mb-6 bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full text-xs font-bold transition flex items-center border border-white/20 uppercase tracking-widest">
+            <a href="https://careerdrive.co.in/" class="mb-6 bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full text-xs font-bold transition flex items-center border border-white/20 uppercase tracking-widest">
                 <i class="fas fa-home mr-2"></i> Back to Home
             </a>
             <h1 class="text-3xl md:text-4xl font-extrabold text-white text-center tracking-tight">ADMISSION APPLICATION 2026</h1>
@@ -41,7 +40,7 @@
                     </div>
                     <div>
                         <label>Father's/Guardian's Name</label>
-                        <input type="text" id="parent">
+                        <input type="text" id="parent" placeholder="Parent Name">
                     </div>
                     <div>
                         <label>Date of Birth</label>
@@ -57,11 +56,11 @@
                     </div>
                     <div class="md:col-span-2">
                         <label>Gender</label>
-                        <div class="flex gap-4">
-                            <label class="flex items-center capitalize lowercase font-medium text-slate-700 cursor-pointer">
+                        <div class="flex gap-6 mt-2">
+                            <label class="flex items-center font-bold text-slate-700 cursor-pointer">
                                 <input type="radio" name="gender" value="Male" class="w-4 h-4 mr-2" checked> Male
                             </label>
-                            <label class="flex items-center capitalize lowercase font-medium text-slate-700 cursor-pointer">
+                            <label class="flex items-center font-bold text-slate-700 cursor-pointer">
                                 <input type="radio" name="gender" value="Female" class="w-4 h-4 mr-2"> Female
                             </label>
                         </div>
@@ -156,7 +155,7 @@
             </div>
             <h2 class="text-3xl font-extrabold text-[#1e3a8a] mb-2">Success!</h2>
             <p class="text-gray-500 mb-8 font-medium">Your detailed application has been sent. Please send your marksheets on WhatsApp now for verification.</p>
-            <a href="index.html" class="inline-block bg-[#1e3a8a] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-orange-500 transition shadow-lg">Back to Home</a>
+            <a href="https://careerdrive.co.in/" class="inline-block bg-[#1e3a8a] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-orange-500 transition shadow-lg">Back to Home</a>
         </div>
     </div>
 
@@ -164,55 +163,59 @@
         document.getElementById('fullAdmissionForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Collect All Data
-            const name = document.getElementById('name').value;
-            const parent = document.getElementById('parent').value;
-            const dob = document.getElementById('dob').value;
-            const whatsapp = document.getElementById('whatsapp').value;
-            const altPhone = document.getElementById('altPhone').value;
-            const gender = document.querySelector('input[name="gender"]:checked').value;
-            const prevInst = document.getElementById('prevInst').value;
-            const marks = document.getElementById('marks').value;
-            const passYear = document.getElementById('passYear').value;
-            const rank = document.getElementById('rank').value;
-            const stream = document.getElementById('stream').value;
-            const course = document.getElementById('course').value;
-            const location = document.getElementById('location').value;
-            const budget = document.getElementById('budget').value;
-            const address = document.getElementById('address').value;
+            const getValue = (id) => document.getElementById(id).value || "Not Provided";
+
+            const data = {
+                name: getValue('name'),
+                parent: getValue('parent'),
+                dob: getValue('dob'),
+                whatsapp: getValue('whatsapp'),
+                altPhone: getValue('altPhone'),
+                gender: document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : "Not Specified",
+                prevInst: getValue('prevInst'),
+                marks: getValue('marks'),
+                passYear: getValue('passYear'),
+                rank: getValue('rank'),
+                stream: getValue('stream'),
+                course: getValue('course'),
+                location: getValue('location'),
+                budget: getValue('budget'),
+                address: getValue('address')
+            };
 
             const myWhatsApp = "919495209080";
 
-            // Format WhatsApp Message
-            const message = `*🌟 NEW ADMISSION APPLICATION 🌟*%0A` +
-                            `----------------------------%0A` +
-                            `*👤 PERSONAL INFO*%0A` +
-                            `• Name: ${name}%0A` +
-                            `• Parent: ${parent}%0A` +
-                            `• Gender: ${gender}%0A` +
-                            `• DOB: ${dob}%0A` +
-                            `• WhatsApp: ${whatsapp}%0A` +
-                            `• Alt Phone: ${altPhone}%0A%0A` +
-                            `*🎓 ACADEMIC INFO*%0A` +
-                            `• Institution: ${prevInst}%0A` +
-                            `• Marks: ${marks}%0A` +
-                            `• Pass Year: ${passYear}%0A` +
-                            `• Rank: ${rank}%0A%0A` +
-                            `*🎯 PREFERENCES*%0A` +
-                            `• Stream: ${stream}%0A` +
-                            `• Course: ${course}%0A` +
-                            `• Location: ${location}%0A` +
-                            `• Budget: ${budget}%0A%0A` +
-                            `*📍 ADDRESS*%0A` +
-                            `${address}%0A` +
-                            `----------------------------%0A` +
-                            `_Student is waiting for document verification._`;
+            const messageText = `*🌟 NEW ADMISSION APPLICATION 2026 🌟*\n` +
+                                `----------------------------\n` +
+                                `*👤 PERSONAL INFO*\n` +
+                                `• Name: ${data.name}\n` +
+                                `• Parent: ${data.parent}\n` +
+                                `• Gender: ${data.gender}\n` +
+                                `• DOB: ${data.dob}\n` +
+                                `• WhatsApp: ${data.whatsapp}\n` +
+                                `• Alt Phone: ${data.altPhone}\n\n` +
+                                `*🎓 ACADEMIC INFO*\n` +
+                                `• Institution: ${data.prevInst}\n` +
+                                `• Marks: ${data.marks}\n` +
+                                `• Pass Year: ${data.passYear}\n` +
+                                `• Rank: ${data.rank}\n\n` +
+                                `*🎯 PREFERENCES*\n` +
+                                `• Stream: ${data.stream}\n` +
+                                `• Course: ${data.course}\n` +
+                                `• Location: ${data.location}\n` +
+                                `• Budget: ${data.budget}\n\n` +
+                                `*📍 ADDRESS*\n` +
+                                `${data.address}\n` +
+                                `----------------------------\n` +
+                                `_Student is waiting for document verification._`;
 
-            // Open WhatsApp
-            window.open(`https://wa.me/${myWhatsApp}?text=${message}`, '_blank');
+            const encodedMessage = encodeURIComponent(messageText);
+            window.open(`https://wa.me/${myWhatsApp}?text=${encodedMessage}`, '_blank');
 
-            // Show Success Popup
-            document.getElementById('thankYouModal').classList.remove('hidden');
+            const modal = document.getElementById('thankYouModal');
+            if(modal) {
+                modal.classList.remove('hidden');
+            }
         });
     </script>
 </body>
